@@ -13,3 +13,15 @@ An example job would be:
 ```
 */15 * * * * varnishncsa -d | grep 'ELB-HealthChecker' | awk '{ print $1 }' | /path/to/repo/unique-ips.py > /path/to/repo/elb-ips.list
 ```
+
+2. Add code to settings.php
+---------------------------
+
+Add the following code at the end of your settings.php to read the `elb-ips.list` file and set the correct reverse proxy IPS:
+
+```php
+$ip_list_file = "/path/to/repo/elb-ips.list";
+if (file_exists($ip_list_file)) {
+  require(ip_list_file);
+}
+```
