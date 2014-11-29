@@ -8,4 +8,8 @@ These scripts enable you to populate the `$conf['reverse_proxy_addresses']` in s
 
 Set up a cron job to regularly update the `elb-ips.list` file via `varnishncsa`.
 
-An example job would be ```*/15 * * * * varnishncsa -d | grep 'ELB-HealthChecker' | awk '{ print $1 }' | /files/scripts/unique-ips.py > /files/scripts/elb-ips.list```
+An example job would be:
+
+```
+*/15 * * * * varnishncsa -d | grep 'ELB-HealthChecker' | awk '{ print $1 }' | /path/to/repo/unique-ips.py > /path/to/repo/elb-ips.list
+```
