@@ -22,6 +22,6 @@ Add the following code at the end of your settings.php to read the `elb-ips.list
 ```php
 $ip_list_file = "/path/to/repo/elb-ips.list";
 if (file_exists($ip_list_file)) {
-  require(ip_list_file);
+  require($ip_list_file);
 }
 ```
