@@ -20,7 +20,7 @@ An example job would be:
 Add the following code at the end of your settings.php to read the `elb-ips.list` file and set the correct reverse proxy IPs:
 
 ```php
-$ip_list_file = "/path/to/repo/elb-ips.list";
+$ip_list_file = "/path/to/repo/reverse-ips-from-elbips.php";
 if (file_exists($ip_list_file)) {
   require($ip_list_file);
 }
