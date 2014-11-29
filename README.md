@@ -17,7 +17,7 @@ An example job would be:
 2. Add code to settings.php
 ---------------------------
 
-Add the following code at the end of your settings.php to read the `elb-ips.list` file and set the correct reverse proxy IPS:
+Add the following code at the end of your settings.php to read the `elb-ips.list` file and set the correct reverse proxy IPs:
 
 ```php
 $ip_list_file = "/path/to/repo/elb-ips.list";
